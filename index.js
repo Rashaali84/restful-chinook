@@ -2,7 +2,7 @@
 
 const fs = require('fs');
 const path = require('path');
-
+const fetch = require('node-fetch');
 const express = require('express');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
@@ -10,8 +10,9 @@ const cors = require('cors');
 
 const config = require('./config');
 const api = require('./api');
-
+const client = require('./client');
 const app = express();
+app.set('view engine', 'ejs');
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -25,9 +26,9 @@ app.use(morgan('combined', {
 }));
 // log to console
 app.use(morgan('dev'));
+//app.use('/', express.static(path.join(__dirname, 'client')));
 
-app.use('/', express.static(path.join(__dirname, 'client')));
-
+app.use('/chinook', client);
 app.use('/api', api);
 
 app.use(function (err, req, res, next) {

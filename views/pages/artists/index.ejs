@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include ('../../partials/_head') %>
+  </head>
+  <body class="container">
+    <header>
+      <%- include ('../../partials/_header') %>
+    </header>
+    <main>
+      <div class="jumbotron">
+        <p>chinook front-end Display-Artists...</p>
+        <h5>This is a display for the artist list in db...</h5>
+        <ul>
+          <% rows.forEach(function(row) { %>
+          <li>
+            <%= row.Name %> - <%= row.ArtistId %>
+          </li>
+
+          <% }); %>
+        </ul>
+      </div>
+    </main>
+    <footer>
+      <%- include ('../../partials/_footer') %>
+    </footer>
+  </body>
+</html>

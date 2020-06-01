@@ -7,7 +7,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const cors = require('cors');
-
+const port = process.env.PORT || 3000;
 const config = require('./config');
 const api = require('./api');
 const client = require('./client');
@@ -36,7 +36,7 @@ app.use(function (err, req, res, next) {
   res.status(500).end();
 });
 
-app.listen(config.PORT, () => {
+app.listen(port, () => {
   console.log(
     `listening at http://localhost:${config.PORT} (${config.MODE} mode)`
   );

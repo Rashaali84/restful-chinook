@@ -4,19 +4,19 @@ const port = process.env.PORT || 3000
 
 
 
-const fs = require('fs');
-const path = require('path');
+//const fs = require('fs');
+//const path = require('path');
 const express = require('express');
-const bodyParser = require('body-parser');
-const morgan = require('morgan');
-const cors = require('cors');
-const config = require('./config');
-const api = require('./api');
-const client = require('./client');
+//const bodyParser = require('body-parser');
+//const morgan = require('morgan');
+//const cors = require('cors');
+//const config = require('./config');
+//const api = require('./api');
+//const client = require('./client');
 const app = express();
-app.set('view engine', 'ejs');
-app.use(cors());
-app.use(bodyParser.json());
+//app.set('view engine', 'ejs');
+//app.use(cors());
+//app.use(bodyParser.json());
 
 /*app.use('/', (req, res) => {
     res.statusCode = 200;

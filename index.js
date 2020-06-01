@@ -6,11 +6,12 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const cors = require('cors');
-const port = process.env.PORT || config.PORT;
+
 const config = require('./config');
 const api = require('./api');
 const client = require('./client');
 const app = express();
+const port = process.env.PORT || config.PORT;
 app.set('view engine', 'ejs');
 
 app.use(cors());

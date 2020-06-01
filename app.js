@@ -11,8 +11,8 @@ const express = require('express');
 //const morgan = require('morgan');
 //const cors = require('cors');
 //const config = require('./config');
-//const api = require('./api');
-//const client = require('./client');
+const api = require('./api');
+const client = require('./client');
 const app = express();
 //app.set('view engine', 'ejs');
 //app.use(cors());
@@ -28,7 +28,8 @@ app.use('/', (req, res) => {
     res.setHeader('Content-Type', 'text/html');
     res.end('<h1>Hello World</h1>');
 });*/
-
+app.use('/chinook', client);
+app.use('/api', api);
 
 app.listen(port, () => {
     console.log(`Server running at port ` + port);

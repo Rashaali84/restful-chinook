@@ -24,7 +24,9 @@ app.use(morgan('combined', {
   )
 }));
 // log to console
-app.use(morgan('dev'));
+if (config.MODE === 'development') {
+  app.use(morgan('dev'));
+};
 
 app.use('/', express.static(path.join(__dirname, 'client')));
 

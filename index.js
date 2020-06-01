@@ -6,13 +6,13 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const cors = require('cors');
-
 const config = require('./config');
 const api = require('./api');
 const client = require('./client');
 const app = express();
-//const port = process.env.PORT || config.PORT;
 app.set('view engine', 'ejs');
+//const port = process.env.PORT || config.PORT;
+
 
 app.use(cors());
 app.use(bodyParser.json());

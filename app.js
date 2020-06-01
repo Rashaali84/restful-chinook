@@ -18,22 +18,22 @@ app.set('view engine', 'ejs');
 app.use(cors());
 app.use(bodyParser.json());
 
-app.use('/', (req, res) => {
-    res.statusCode = 200;
-    res.setHeader('Content-Type', 'text/html');
-    res.end('<h1>Hello World</h1>');
-});
-/*const server = http.createServer((req, res) => {
+/*app.use('/', (req, res) => {
     res.statusCode = 200;
     res.setHeader('Content-Type', 'text/html');
     res.end('<h1>Hello World</h1>');
 });*/
-
-
-app.listen(port, () => {
-    console.log(`Server running at port ` + port);
+const server = http.createServer((req, res) => {
+    res.statusCode = 200;
+    res.setHeader('Content-Type', 'text/html');
+    res.end('<h1>Hello World</h1>');
 });
 
-/*server.listen(port, () => {
+
+/*app.listen(port, () => {
     console.log(`Server running at port ` + port);
 });*/
+
+server.listen(port, () => {
+    console.log(`Server running at port ` + port);
+});

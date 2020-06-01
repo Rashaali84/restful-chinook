@@ -8,8 +8,8 @@ const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const cors = require('cors');
 
-const config = require('./config');
-const api = require('./api');
+const config = require('config');
+const api = require('api');
 
 const app = express();
 if (process.env.NODE_ENV === 'production') {

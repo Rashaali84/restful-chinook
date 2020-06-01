@@ -18,12 +18,13 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // log to file
-app.use(morgan('combined', {
+/*app.use(morgan('combined', {
   stream: fs.createWriteStream(
     path.join(__dirname, 'access.log'),
     { flags: 'a' }
   )
-}));
+}));*/
+
 // log to console
 app.use(morgan('dev'));
 //app.use('/', express.static(path.join(__dirname, 'client')));

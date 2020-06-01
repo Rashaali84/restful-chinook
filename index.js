@@ -12,7 +12,9 @@ const config = require('./config');
 const api = require('./api');
 
 const app = express();
-
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('client/build'));
+}
 app.use(cors());
 app.use(bodyParser.json());
 
@@ -34,7 +36,9 @@ app.use(function (err, req, res, next) {
   console.error(err.stack);
   res.status(500).end();
 });
-
+app.get('*', (request, response) => {
+  response.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+});
 app.listen(config.PORT, () => {
   console.log(
     `listening at http://localhost:${config.PORT} (${config.MODE} mode)`

@@ -5,14 +5,14 @@ const port = process.env.PORT || 3000
 
 
 //const fs = require('fs');
-//const path = require('path');
+const path = require('path');
 const express = require('express');
 //const bodyParser = require('body-parser');
 //const morgan = require('morgan');
 //const cors = require('cors');
 //const config = require('./config');
-const api = require('./api');
-const client = require('./client');
+const api = require(path(__dirname, 'api'));
+const client = require(path(__dirname, 'client'));
 const app = express();
 //app.set('view engine', 'ejs');
 //app.use(cors());

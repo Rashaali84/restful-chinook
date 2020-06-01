@@ -4,6 +4,6 @@ const config = require('../config');
 
 const DB_PATH = path.join(__dirname, '..', config.DB_PATH);
 
-const dbConnection = new sqlite3.Database(process.env.DB_PATH);
+const dbConnection = new sqlite3.Database(DB_PATH);
 
 module.exports = dbConnection;

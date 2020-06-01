@@ -31,8 +31,8 @@ app.use(morgan('dev'));
 app.use('/', (req, res, next) => {
   res.send({ hi: 'there' })
 });
-app.use('/chinook', client);
-app.use('/api', api);
+//app.use('/chinook', client);
+//app.use('/api', api);
 
 app.use(function (err, req, res, next) {
   console.error(err.stack);

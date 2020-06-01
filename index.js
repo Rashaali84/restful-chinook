@@ -27,7 +27,9 @@ app.use(morgan('combined', {
 // log to console
 app.use(morgan('dev'));
 //app.use('/', express.static(path.join(__dirname, 'client')));
-
+app.use('/', (req, res, next) => {
+  res.send({ hi: 'there' })
+});
 app.use('/chinook', client);
 app.use('/api', api);
 

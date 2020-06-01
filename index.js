@@ -2,12 +2,11 @@
 
 const fs = require('fs');
 const path = require('path');
-const fetch = require('node-fetch');
 const express = require('express');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const cors = require('cors');
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || config.PORT;
 const config = require('./config');
 const api = require('./api');
 const client = require('./client');
